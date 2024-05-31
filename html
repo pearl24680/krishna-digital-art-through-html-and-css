@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Drawing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="krishnaCanvas" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('krishnaCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw face
+        ctx.beginPath();
+        ctx.arc(400, 200, 100, 0, Math.PI * 2, true); // Outer circle
+        ctx.fillStyle = '#ffe0bd'; // Skin color
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw eyes
+        ctx.beginPath();
+        ctx.arc(370, 180, 10, 0, Math.PI * 2, true); // Left eye
+        ctx.arc(430, 180, 10, 0, Math.PI * 2, true); // Right eye
+        ctx.fillStyle = '#000';
+        ctx.fill();
+
+        // Draw pupils
+        ctx.beginPath();
+        ctx.arc(370, 180, 5, 0, Math.PI * 2, true); // Left pupil
+        ctx.arc(430, 180, 5, 0, Math.PI * 2, true); // Right pupil
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+
+        // Draw mouth
+        ctx.beginPath();
+        ctx.arc(400, 240, 40, 0, Math.PI, false); // Mouth (clockwise)
+        ctx.stroke();
+
+        // Draw crown
+        ctx.beginPath();
+        ctx.moveTo(350, 100);
+        ctx.lineTo(450, 100);
+        ctx.lineTo(400, 50);
+        ctx.closePath();
+        ctx.fillStyle = '#ffd700'; // Gold color
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw body
+        ctx.beginPath();
+        ctx.rect(350, 300, 100, 200);
+        ctx.fillStyle = '#3b5998'; // Blue color
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw flute
+        ctx.beginPath();
+        ctx.moveTo(300, 320);
+        ctx.lineTo(600, 320);
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = '#a52a2a'; // Brown color
+        ctx.stroke();
+    </script>
+</body>
+</html>
